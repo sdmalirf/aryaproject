@@ -1,0 +1,899 @@
+\/* Reset margin, padding, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+/* Styling the navigation bar */
+.navbar {
+  margin: 20px;
+  justify-content: right;  
+  overflow: hidden;
+  z-index: 5 ;
+  text-size-adjust: bold ;
+}
+
+/* Style the links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  font-weight: bold
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Header Styling */
+header {
+    background-image: url(/static/img/img5.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+/* Fade effect */
+header::before {
+    content: ''; /* Empty content for the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.192); /* Black overlay with 30% opacity */
+    z-index: 1; /* Make sure the overlay is on top of the image */
+    animation: fadeIn 1s ease-in-out; /* Animation for the fade effect */
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.568); /* Semi-transparent black */
+    z-index: 1; /* Lower z-index to keep it behind the button */
+}
+
+/* Animation to fade in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start with no opacity */
+    }
+    100% {
+        opacity: 1; /* End with full opacity */
+    }
+}
+
+header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    margin-top: 200px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 2; /* Ensure the text is above the overlay */
+}
+
+.content {
+    display: flex;
+    flex-direction: column; /* Pastikan elemen diatur secara vertikal */
+    align-items: center;
+    z-index: 2;
+}
+
+ul, ol {
+    padding-left: 20px;
+    z-index: 2; 
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+    z-index: 2; 
+}
+
+.text-box {
+  background-color: rgba(0, 0, 0, 0.7); /* Warna latar belakang dengan transparansi */
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+  width: 80%; /* Sesuaikan dengan lebar yang diinginkan */
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+
+header p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    z-index: 2; /* Ensure the paragraph is above the overlay */
+}
+
+
+/* Button Styling */
+.btn-primary {
+    position: relative; /* Allow the use of ::before and ::after */
+    background-color: #e74c3c;
+    color: white;
+    gap: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    z-index: 5; /* Ensure the button is in front */
+}
+
+.btn-primary::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #fff; /* White border around the button */
+    border-radius: 25px; /* Match the button's border-radius */
+    z-index: -1; /* Place it behind the button content */
+    transition: all 0.3s ease;
+}
+
+.btn-primary::after {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px; /* Match the button's border-radius */
+    z-index: -2; /* Behind the button content and ::before */
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #c0392b;
+}
+
+/* Content Section Styling */
+.content-section {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #f4f4f4; /* Light background for content */
+}
+
+/* Card Container Styling (Horizontal Layout) */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 30px;
+    justify-content: center; /* Memusatkan secara horizontal */
+    align-items: center; /* Memusatkan secara vertikal */
+    min-height: 100vh;
+}
+
+/* Card Styling */
+.card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    width: 260px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.75rem;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333; /* Warna latar belakang footer */
+    color: #fff; /* Warna teks */
+    text-align: center;
+    padding: 10px 10px;
+    width: 100%; /* Pastikan lebar penuh */
+    position: relative;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .content-section h2 {
+        font-size: 2rem;
+    }
+
+    .card-container {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center;
+    }
+
+    .card {
+        width: 80%; /* Adjust card width on smaller screens */
+    }
+
+    /* Form Container Styling */
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-container h2 {
+        font-size: 1.8rem;
+    }
+
+    form input, form textarea {
+        font-size: 0.95rem;
+    }
+}
+
+/* Form Container Styling (Pink background) */
+.form-container {
+    background-color: #FF409F;
+    border-radius: 10px;
+    justify-content: center;
+    padding: 50px;
+    width: 100%;
+    margin: 90px auto;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-direction: column;
+}
+
+/* Heading for the form */
+.form-container h2 {
+    font-size: 2rem;
+    color: white; /* White color for the heading */
+    margin-bottom: 20px;
+}
+
+/* Form Labels Styling */
+form label {
+    font-size: 1.1rem;
+    color: #f4f4f4;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+/* Form Inputs and Textarea Styling */
+form input, form textarea {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Form Button Styling */
+.btn-submit {
+    background-color: #3498db; /* Blue background for submit button */
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Button Hover Effect */
+.btn-submit:hover {
+    background-color: #2980b9; /* Darker blue shade */
+}
+
+/* Result Container */
+.result-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 200px auto;
+    padding: 30px;
+    background-color: #2980b9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.result-container h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.categories {
+    margin-top: 20px;
+}
+
+.category-item {
+    font-size: 18px;
+    color: #f4f4f4;
+    margin: 10px 0;
+}
+
+.category-item span {
+    font-weight: bold;
+    color: #f4f4f4;
+}
+
+footer {
+    margin-top: auto;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+footer a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+footer a:hover {
+    color: #45a049;
+}
+
+h2 {
+    display: block;
+    font-size: 35px;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.module-container {
+    display: flex; /* Mengatur layout fleksibel */
+    flex-wrap: wrap; /* Membuat elemen turun ke baris baru jika tidak cukup */
+    justify-content: space-around; /* Rata secara horizontal dengan jarak seimbang */
+    align-items: flex-start; /* Menyelaraskan elemen di bagian atas */
+    gap: 20px; /* Jarak antar elemen */
+    margin-top: 20px;
+}
+
+.module {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    flex: 1 1 calc(30% - 20px); /* Lebar fleksibel sekitar 30% dengan jarak 20px */
+    box-sizing: border-box; /* Padding tidak menambah lebar */
+    min-width: 300px; /* Lebar minimum agar responsif */
+}
+
+.module img {
+    width: 120px; /* Tetapkan ukuran gambar */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 15px; /* Beri jarak dengan teks */
+}
+
+.module-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.module-content h3 {
+    font-size: 1.75rem;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.module-content p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.module:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.story-list {
+    display: flex;
+    flex-wrap: wrap; /* Membuat elemen-elemen cerita bisa wrap (berpindah ke baris berikutnya) */
+    justify-content: center; /* Menjaga agar cerita-cerita terpusat di halaman */
+    gap: 10px; /* Menambahkan jarak antar elemen cerita */
+    padding: 20px;
+}
+
+.story {
+    display: flex;
+    flex-direction: column; /* Bisa tetap pakai kolom di dalam story */
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 390px; /* Maksimal lebar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.story-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.story-content h3 {
+    font-size: 1.75rem;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.story-content p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5; /* Membuat jarak antar baris agar lebih mudah dibaca */
+    margin-bottom: 10px;
+}
+
+.story:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsif untuk layar lebih kecil */
+@media (max-width: 768px) {
+    .story-list {
+        padding: 0 15px; /* Menambahkan padding kiri dan kanan */
+    }
+
+    .story {
+        padding: 15px; /* Mengurangi padding untuk layar kecil */
+        width: 100%; /* Memastikan story mengisi lebar layar */
+    }
+
+    .story-content h3 {
+        font-size: 1.5rem; /* Menyesuaikan ukuran font untuk layar kecil */
+    }
+
+    .story-content p {
+        font-size: 0.9rem; /* Menyesuaikan ukuran font untuk layar kecil */
+    }
+}
+
+.reading-section1 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section1 h1,
+.reading-section1 h2,
+.reading-section1 ul,
+.reading-section1 li,
+.reading-section1 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section2 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section2 h1,
+.reading-section2 h2,
+.reading-section2 ul,
+.reading-section2 li,
+.reading-section2 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+.reading-section3 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section3 h1,
+.reading-section3 h2,
+.reading-section3 ul,
+.reading-section3 li,
+.reading-section3 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+.reading-section4 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section4 h1,
+.reading-section4 h2,
+.reading-section4 ul,
+.reading-section4 li,
+.reading-section4 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section5 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section5 h1,
+.reading-section5 h2,
+.reading-section5 ul,
+.reading-section5 li,
+.reading-section5 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section6 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section6 h1,
+.reading-section6 h2,
+.reading-section6 ul,
+.reading-section6 li,
+.reading-section6 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section7 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section7 h1,
+.reading-section7 h2,
+.reading-section7 ul,
+.reading-section7 li,
+.reading-section7 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+
+.reading-section8 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section8 h1,
+.reading-section8 h2,
+.reading-section8 ul,
+.reading-section8 li,
+.reading-section8 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section9 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section9 h1,
+.reading-section9 h2,
+.reading-section9 ul,
+.reading-section9 li,
+.reading-section9 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section10 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section10 h1,
+.reading-section10 h2,
+.reading-section10 ul,
+.reading-section10 li,
+.reading-section10 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section11 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section11 h1,
+.reading-section11 h2,
+.reading-section11 ul,
+.reading-section11 li,
+.reading-section11 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section12 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section12 h1,
+.reading-section12 h2,
+.reading-section12 ul,
+.reading-section12 li,
+.reading-section12 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section13 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section13 h1,
+.reading-section13 h2,
+.reading-section13 ul,
+.reading-section13 li,
+.reading-section13 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section14 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section14 h1,
+.reading-section14 h2,
+.reading-section14 ul,
+.reading-section14 li,
+.reading-section14 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section15 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section15 h1,
+.reading-section15 h2,
+.reading-section15 ul,
+.reading-section15 li,
+.reading-section15 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.reading-section16 {
+    background-image: url(/static/img/img3.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna hitam transparan 50% */
+    padding: 30px 230px;
+    text-align:left;
+}
+
+.reading-section16 h1,
+.reading-section16 h2,
+.reading-section16 ul,
+.reading-section16 li,
+.reading-section16 p {
+    position: relative; /* Pastikan teks muncul di atas */
+    z-index: 1; /* Teks berada di atas background */
+    color: white; /* Pastikan teks terlihat jelas */
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+

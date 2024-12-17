@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header> 
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <h1>This is our story</h1>
+            <p>A space where you can freely share your stories, thoughts, and experiences. <br> Explore various topics and materials, and feel free to express yourself here.</p>
+            <a href="#stories"><button class="btn-primary">Explore Now</button></a>
+    
+    </header>
+    <section class="content-section" id="ExploreNow">
+        <h2> Readings </h2>
+        <div class="story-list" id="stories">
+            {% for story in stories %}
+                <div class="story">
+                    <div class="story-content">
+                        <h3>{{ story['Name'] }}</h3>
+                        <p><strong>Email:</strong> {{ story['Email'] }}</p>
+                        <p><strong>Story:</strong> {{ story['Story'] }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+</body>
+</html>
+<footer id="contact">
+    <p>&copy; 2024 BullyShield. All rights reserved.</p>
+    <p>Follow us on <a href="#">Instagram</a>, <a href="#">Facebook</a>, and <a href="#">Twitter</a></p>
+</footer>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BullyShield - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="home">
+        <div class="navbar">
+            <a href="#home">Home</a>
+            <a href="#">About</a>
+            <a href="#what-we-do">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <h1>Welcome to BullyShield</h1>
+        <p>A platform for sharing stories and combating bullying.</p>
+        <a href="#what-we-do"><button class="btn-primary">What We Do</button></a>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="content-section" id="what-we-do">
+        <h2>What We Do</h2>
+        <div class="card-container">
+            <!-- Card 1: Story Sharing -->
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/img2.jpg') }}" alt="Story Sharing">
+                <h3>Story Sharing</h3>
+                <p>A safe space for victims to share their experiences and find support.</p>
+                <a href="/tell_my_story"><button class="btn-primary">Share Your Story</button></a>
+            </div>
+            <!-- Card 2: Resources -->
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/img3.png') }}" alt="Resources">
+                <h3>Resources</h3>
+                <p>Access helpful resources and guides for bullying prevention and intervention.</p>
+                <a href="/modul"><button class="btn-primary">Click Here</button></a> 
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/img8.jpg') }}" alt="Resources">
+                <h3>Our Stories</h3>
+                <p>Access helpful resources and guides for bullying prevention and intervention.</p>
+                <a href="/story"><button class="btn-primary">Click Here</button></a>
+            </div>
+            <!-- Card 3: Support Community -->
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/img4.jpg') }}" alt="Support Community">
+                <h3>Support Community</h3>
+                <p>Join a community of individuals who are working together to stop bullying.</p>
+                <a href="/"><button class="btn-primary">Coming Soon</button></a>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/img7.jpg') }}" alt="Event">
+                <h3>Event</h3>
+                <p>The event you need, and we hold it.</p>
+                <a href="/"><button class="btn-primary">Coming Soon</button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <p>&copy; 2024 BullyShield. All rights reserved.</p>
+        <p>Follow us on <a href="#">Instagram</a>, <a href="#">Facebook</a>, and <a href="#">Twitter</a></p>
+    </footer>
+
+</body>
+</html>
